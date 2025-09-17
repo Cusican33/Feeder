@@ -24,20 +24,14 @@ public class Feeder
      */
     public void simulateOneDay(int numBirds)
     {
-        if (Math.random() < 0.05)
-        {
-            currentFood = 0;
-        }
+        if (Math.random() < 0.05) currentFood = 0;
         else
         {
             int eaten = (int) (Math.random() * 41) + 10;
             eaten *= numBirds;
             currentFood -= eaten;
         }
-        if (currentFood < 0 )
-        {
-            currentFood = 0;
-        }
+        if (currentFood < 0 ) currentFood = 0;
     }
 
 
@@ -53,10 +47,7 @@ public class Feeder
         int days = 0;
         while (numDays > 0)
         {
-            if (currentFood == 0)
-            {
-                return days;
-            }
+            if (currentFood == 0) return days;
             simulateOneDay(numBirds);
             numDays--;
             days++;
